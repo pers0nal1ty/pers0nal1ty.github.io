@@ -8,7 +8,6 @@ body {
 	color: #4d5155;
 }
 
-/* links */
 a {
 	outline: none !important;
 	color: #4198e9;
@@ -23,7 +22,6 @@ a:hover {
 	color: #4198e9;
 }
 
-/* transition */
 button,
 input,
 textarea,
@@ -34,7 +32,6 @@ textarea,
 	transition: all 0.3s ease;
 }
 
-/* H1 - H6 */
 h1,
 h2,
 h3,
@@ -90,7 +87,6 @@ h6,
 	line-height: 1.7;
 }
 
-/* pre tag */
 pre {
 	font-size: 16px;
 	line-height: 1.45;
@@ -102,7 +98,6 @@ pre {
 	border-radius: 4px;
 }
 
-/* text-align */
 .ta-center {
 	text-align: center;
 }
@@ -113,7 +108,6 @@ pre {
 	text-align: left;
 }
 
-/* float */
 .f-left {
 	float: left;
 }
@@ -121,7 +115,6 @@ pre {
 	float: right;
 }
 
-/* font-width */
 .fw-300 {
 	font-weight: 300 !important;
 }
@@ -135,7 +128,6 @@ pre {
 	font-weight: 700 !important;
 }
 
-/* padding */
 .p-none {
 	padding: 0 !important;
 }
@@ -146,8 +138,6 @@ pre {
 	padding-left: 0 !important;
 }
 
-/* margins */
-/* margin-bottom */
 .mb-5 {
 	margin-bottom: 5px !important;
 }
@@ -188,7 +178,6 @@ pre {
 	margin-bottom: 65px !important;
 }
 
-/* margin-top */
 .mt-5 {
 	margin-top: 5px !important;
 }
@@ -229,7 +218,6 @@ pre {
 	margin-top: 65px !important;
 }
 
-/* margin-bottom and margin-top 0 */
 .mb-none {
 	margin-bottom: 0 !important;
 }
@@ -237,26 +225,18 @@ pre {
 	margin-top: 0 !important;
 }
 
-/* word-break */
 .break-word {
 	word-wrap: break-word;
 }
 
-/* prettyPhoto lightbox */
 div.pp_default .pp_content {
 	background-color: #f8f8f8;
 }
 
-/* transparent background */
 .bg-transparent {
 	background-color: transparent !important;
 }
 
-
-/*
- * 1.1 - Override Bootstrap's default container
- * -------------------------------------------------------------
- */
 
 @media (min-width: 1200px) {
 	.container {
@@ -264,11 +244,6 @@ div.pp_default .pp_content {
 	}
 }
 
-
-/**
- * 2.0 - Top navigation (Header)
- * -------------------------------------------------------------
- */
 
 #docs-header {
 	background-color: #3a556d;
@@ -279,7 +254,6 @@ div.pp_default .pp_content {
 	text-align: center;
 }
 
-/* top nav */
 .docs-header-navigation {
 	margin: 0;
 	padding: 0;
@@ -307,7 +281,6 @@ div.pp_default .pp_content {
 	padding: 0 10px;
 }
 
-/* template name */
 .docs-header-navigation li.template-name {
 	margin-right: 25px;
 }
@@ -318,11 +291,6 @@ div.pp_default .pp_content {
 	color: #ffffff;
 }
 
-
-/**
- * 3.0 - Documentation heading
- * -------------------------------------------------------------
- */
 
 .docs-heading-container {
 	margin-bottom: 80px;
@@ -351,14 +319,6 @@ div.pp_default .pp_content {
 	line-height: 1.7;
 }
 
-
-/**
- * 4.0 - Content
- * -------------------------------------------------------------
- *
- * 4.1 - Sidebar navigation (Scrollspy + Affix)
- * -------------------------------------------------------------
- */
 
 .sidebar-navigation {
 	width: 212px;
@@ -394,14 +354,12 @@ div.pp_default .pp_content {
 	background-color: #1a1a1a;
 }
 
-/* .nav */
 .nav > li > a:hover,
 .nav > li > a:focus {
 	background-color: transparent !important;
 	text-decoration: none;
 }
 
-/* Back to top and Buy template */
 .sidebar-navigation .nav-item-back-to-top {
 	margin-top: 25px;
 }
@@ -418,7 +376,6 @@ div.pp_default .pp_content {
 	color: #e7e7e7;
 }
 
-/* affix */
 .sidebar-navigation.affix {
 	top: 0;
 }
@@ -427,12 +384,6 @@ div.pp_default .pp_content {
 }
 
 
-/**
- * 4.2 - Content styles
- * -------------------------------------------------------------
- */
-
-/* content */
 .content {
 	font-size: 15px;
 	font-weight: 400;
@@ -447,7 +398,6 @@ div.pp_default .pp_content {
 	margin-bottom: 0;
 }
 
-/* content section */
 .content-section {
 	margin-bottom: 40px;
 	padding-top: 20px;
@@ -455,12 +405,10 @@ div.pp_default .pp_content {
 	border-bottom: 1px solid #e8e9ea;
 }
 
-/* heading */
 .content-section-heading {
 	margin-bottom: 30px;
 }
 
-/* screenshot link */
 .screenshot-link {
 	text-align: right;
 	margin-bottom: 5px;
@@ -475,7 +423,6 @@ div.pp_default .pp_content {
 	font-style: italic;
 }
 
-/* image */
 .content-section-image {
 	position: relative;
 	overflow: hidden;
@@ -493,7 +440,6 @@ div.pp_default .pp_content {
 	cursor: zoom-in;
 }
 
-/* overlay */
 .img-bg-overlay {
 	position: absolute;
 	top: 10px;
@@ -508,7 +454,6 @@ div.pp_default .pp_content {
 	opacity: 0.2;
 }
 
-/* expand icon */
 .expand-icon {
 	position: absolute;
 	top: 20px;
@@ -530,7 +475,6 @@ div.pp_default .pp_content {
 	opacity: 0.9;
 }
 
-/* ul, ol */
 .content ul.doc-list,
 .content ol.doc-list {
 	margin: 0 0 15px;
@@ -548,7 +492,6 @@ div.pp_default .pp_content {
 	padding: 0 0 0 20px;
 }
 
-/* alerts */
 .alert {
 	word-wrap: break-word;
 }
@@ -556,7 +499,6 @@ div.pp_default .pp_content {
 	text-decoration: underline !important;
 }
 
-/* source link */
 .source-link {
 	margin-bottom: 15px;
 	font-size: 13px;
@@ -569,7 +511,6 @@ div.pp_default .pp_content {
 	font-style: italic;
 }
 
-/* responsive tables */
 .table-responsive {
 	margin-bottom: 20px;
 }
@@ -577,11 +518,6 @@ div.pp_default .pp_content {
 	margin-bottom: 0;
 }
 
-
-/**
- * 5.0 - Footer
- * -------------------------------------------------------------
- */
 
 #docs-footer {
 	background-color: #25272b;
@@ -607,12 +543,6 @@ div.pp_default .pp_content {
 }
 
 
-/**
- * 6.0 - Responsive styles
- * -------------------------------------------------------------
- */
-
-/* responsive nav: template name */
 .navbar-brand,
 .navbar-nav > li > a {
 	text-shadow: none;
@@ -632,7 +562,6 @@ div.pp_default .pp_content {
 	color: #ffffff;
 }
 
-/* collapse button */
 .responsive-nav-collapse-btn {
 	font-size: 14px;
 	color: #ffffff;
@@ -654,7 +583,6 @@ div.pp_default .pp_content {
 	top: 1px;
 }
 
-/* responsive nav */
 @media (max-width: 991px) {
 	#responsive-nav-collapse {
 		padding: 0;
@@ -682,10 +610,8 @@ div.pp_default .pp_content {
 	color: #ffffff;
 }
 
-/* 991px */
 @media (max-width: 991px) {
 
-	/* H1 - H5 */
 	h1,
 	.h1 {
 		font-size: 34px;
@@ -710,7 +636,6 @@ div.pp_default .pp_content {
 		line-height: 1.6;
 	}
 
-	/* documentation heading */
 	.docs-heading-container {
 		margin-bottom: 60px;
 		padding: 80px 0;
@@ -724,16 +649,13 @@ div.pp_default .pp_content {
 
 }
 
-/* 767px */
 @media (max-width: 767px) {
 
-	/* remove indent */
 	.mrl-negative {
 		margin-right: -15px;
 		margin-left: -15px;
 	}
 
-	/* H1 - H6 */
 	h1.ta-center,
 	h2.ta-center,
 	h3.ta-center,
@@ -768,7 +690,6 @@ div.pp_default .pp_content {
 		line-height: 1.6;
 	}
 
-	/* responsive nav */
 	.responsive-nav {
 		margin-top: 5px;
 	}
@@ -776,7 +697,6 @@ div.pp_default .pp_content {
 		text-align: left;
 	}
 
-	/* documentation heading */
 	.docs-heading-container {
 		margin-bottom: 40px;
 		padding: 60px 0;
@@ -800,13 +720,11 @@ div.pp_default .pp_content {
 		margin-left: 0;
 	}
 
-	/* image */
 	.content-section-image {
 		margin-right: -15px;
 		margin-left: -15px;
 	}
 
-	/* expand icon */
 	.expand-icon {
 		width: 48px;
 		height: 48px;
