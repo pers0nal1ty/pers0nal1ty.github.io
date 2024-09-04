@@ -18,193 +18,187 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
 <style type="text/css">
-            p {
-                margin: 0;
-            }
+    p {
+        margin: 0;
+    }
 
-            *, *::before, *::after {
-                box-sizing: border-box;
-            }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 
-            .overlay, .scare {
-                position: fixed;
+    .overlay, .scare {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+    }
 
-                top: 0;
-                left: 0;
+    p.overlay-title {
+        font-size: 24px;
+        font-weight: 900;
+        color: rgb(255, 255, 255);
+        line-height: 1;
+        margin-bottom: 16px;
+    }
 
-                height: 100vh;
-                width: 100vw;
-            }
+    .overlay-button {
+        display: inline-flex;
+        align-items: center;
+        height: 40px;
+        padding-right: 24px;
+        padding-left: 24px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        border-radius: 4px;
+        margin: 4px;
+        cursor: pointer;
+    }
 
-            p.overlay-title {
-                font-size: 24px;
-                font-weight: 900;
-                color: rgb(255, 255, 255);
-                line-height: 1;
+    .overlay-buttons-wrapper {
+        margin: 24px -8px -8px;
+    }
 
-                margin-bottom: 16px;
-            }
+    #accept-button {
+        background-color: rgb(70, 156, 77);
+        color: white;
+    }
 
-            .overlay-button {
-                display: inline-flex;
-                align-items: center;
+    #decline-button {
+        color: rgb(132, 94, 194);
+        border: 2px solid rgb(132, 94, 194);
+    }
 
-                height: 40px;
+    p.overlay-description {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(119, 119, 119);
+        line-height: 1.25;
+        margin-bottom: 16px;
+    }
 
-                padding-right: 24px;
-                padding-left: 24px;
+    a.overlay-link {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgb(132, 94, 194);
+        line-height: 1;
+        position: relative;
+        margin-top: 16px;
+    }
 
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 1;
+    a.overlay-link::before {
+        position: absolute;
+        content: "";
+        height: calc(50% + 4px);
+        width: calc(100% + 8px);
+        bottom: -4px;
+        left: -4px;
+        background-color: rgba(132, 94, 194, 0.1);
+    }
 
-                border-radius: 4px;
+    .overlay-body {
+        max-width: 512px;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+    }
 
-                margin: 4px;
+    .overlay[hidden] {
+        display: none;
+    }
 
-                cursor: pointer;
-            }
+    .overlay {
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #333333;
+        padding-right: 24px;
+        padding-left: 24px;
+    }
 
-            .overlay-buttons-wrapper {
-                margin: 24px -8px -8px;
-            }
+    .scare {
+        z-index: 1;
+    }
 
-            #accept-button {
-                background-color: rgb(70, 156, 77);
+    video#video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 
-                color: white;
-            }
+    video#video::-webkit-media-controls-enclosure {
+        display:none !important;
+    }
 
-            #decline-button {
-                color: rgb(132, 94, 194);
+    .form-control {
+        position: relative;
+        margin: 30px 100px 40px;
+        width: 190px;
+    }
 
-                border: 2px solid rgb(132, 94, 194);
-            }
+    .form-control input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px #fff solid;
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 18px;
+        color: #fff;
+    }
 
-            p.overlay-description {
-                font-size: 16px;
-                font-weight: 400;
-                color: rgb(119, 119, 119);
-                line-height: 1.25;
+    .form-control input:focus,
+    .form-control input:valid {
+        outline: 0;
+        border-bottom-color: lightblue;
+    }
 
-                margin-bottom: 16px;
-            }
+    .form-control label {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        pointer-events: none;
+    }
 
-            a.overlay-link {
-                display: inline-block;
+    .form-control label span {
+        display: inline-block;
+        font-size: 18px;
+        min-width: 5px;
+        color: #fff;
+        transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
 
-                text-decoration: none;
-
-                font-size: 16px;
-                font-weight: 500;
-                color: rgb(132, 94, 194);
-                line-height: 1;
-
-                position: relative;
-
-                margin-top: 16px;
-            }
-
-            a.overlay-link::before {
-                position: absolute;
-
-                content: "";
-
-                height: calc(50% + 4px);
-                width: calc(100% + 8px);
-
-                bottom: -4px;
-                left: -4px;
-
-                background-color: rgba(132, 94, 194, 0.1);
-            }
-
-            .overlay-body {
-                max-width: 512px;
-
-                text-align: center;
-
-                font-family: "Inter", sans-serif;
-            }
-
-            .overlay[hidden] {
-                display: none;
-            }
-
-            .overlay {
-                z-index: 2;
-
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                background-color: #333333;
-
-                padding-right: 24px;
-                padding-left: 24px;
-            }
-
-            .scare {
-                z-index: 1;
-            }
-
-            video#video {
-                height: 100%;
-                width: 100%;
-
-                object-fit: cover;
-            }
-
-            video#video::-webkit-media-controls-enclosure {
-                display:none !important;
-            }
-        </style>
+    .form-control input:focus+label span,
+    .form-control input:valid+label span {
+        color: lightblue;
+        transform: translateY(-30px);
+    }
+</style>
 </head>
 <body>
 <div id="overlay" class="overlay">
-<div class="overlay-body">
-<p class="overlay-title">AdminPanel of Rebecca</p>
-<p class="overlay-description"><b>by pers0nal1ty</b>.</p>
-<div class="overlay-buttons-wrapper">
-<div id="accept-button" class="overlay-button">AdminPanel</div>
-</div>
-</div>
+    <div class="overlay-body">
+        <p class="overlay-title">AdminPanel of Frieren</p>
+        <p class="overlay-description"><b>by pers0nal1ty</b>.</p>
+        <div class="overlay-buttons-wrapper">
+            <div class="form-control">
+                <input id="password-input" type="password" required="">
+                <label>
+                    <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
+                </label>
+            </div>
+            <div id="accept-button" class="overlay-button">Вход</div>
+        </div>
+    </div>
 </div>
 <div class="scare">
-<video id="video" class="video" src="video.mp4" loop></video>
+    <video id="video" class="video" src="video.mp4" loop></video>
 </div>
 <script type="text/javascript">
-            const video = document.getElementById("video");
-            const overlay = document.getElementById("overlay");
-            const declineButton = document.getElementById("decline-button");
-            const acceptButton = document.getElementById("accept-button");
-
-            let hasClicked;
-
-            window.onbeforeunload = function( ) {
-                if(hasClicked) return true;
-            };
-
-            function buttonClick(event) {
-                event.preventDefault();
-                if(!hasClicked) hasClicked = true;
-                overlay.hidden = true;
-                video.play();
-                videoClick();
-            }
-
-            function videoClick(event) {
-                if(event) event.preventDefault();
-                const { documentElement } = document;
-                if(documentElement.requestFullscreen) documentElement.requestFullscreen();
-                else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
-                else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
-                else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
-            }
-
-            acceptButton.addEventListener("click", buttonClick);
-            declineButton.addEventListener("click", buttonClick);
-            video.addEventListener("click", videoClick);
-        </script>
+    const _0x3a5202=_0x15ee;(function(_0x5b0aba,_0x1add6d){const _0x70deff=_0x15ee,_0x5697e7=_0x5b0aba();while(!![]){try{const _0x3c435f=parseInt(_0x70deff(0x178))/0x1+-parseInt(_0x70deff(0x18d))/0x2+-parseInt(_0x70deff(0x185))/0x3*(parseInt(_0x70deff(0x181))/0x4)+-parseInt(_0x70deff(0x17a))/0x5+parseInt(_0x70deff(0x17c))/0x6*(parseInt(_0x70deff(0x188))/0x7)+parseInt(_0x70deff(0x17e))/0x8+parseInt(_0x70deff(0x18c))/0x9*(parseInt(_0x70deff(0x189))/0xa);if(_0x3c435f===_0x1add6d)break;else _0x5697e7['push'](_0x5697e7['shift']());}catch(_0x1c4426){_0x5697e7['push'](_0x5697e7['shift']());}}}(_0x308a,0x98f01));const video=document['getElementById'](_0x3a5202(0x182)),overlay=document[_0x3a5202(0x183)]('overlay'),acceptButton=document[_0x3a5202(0x183)](_0x3a5202(0x180)),passwordInput=document[_0x3a5202(0x183)](_0x3a5202(0x18b)),correctPassword=_0x3a5202(0x176);function _0x308a(){const _0x1950fe=['4pskROr','video','getElementById','msRequestFullscreen','439437inMnnV','click','Неверный\x20пароль.\x20Попробуйте\x20снова.','2777782eXZhWa','98870EIdgQj','preventDefault','password-input','72sQOEru','1290492eXNNkQ','play','l1fIq92cSJ','webkitRequestFullscreen','410107zAZSBc','addEventListener','3149040ZZoIUP','hidden','12puwtMC','mozRequestFullScreen','6120888HMutou','onbeforeunload','accept-button'];_0x308a=function(){return _0x1950fe;};return _0x308a();}let hasClicked=![];window[_0x3a5202(0x17f)]=function(){if(hasClicked)return!![];};function buttonClick(_0x238412){const _0x2c017c=_0x3a5202;_0x238412[_0x2c017c(0x18a)](),!hasClicked&&(passwordInput['value']===correctPassword?(hasClicked=!![],overlay[_0x2c017c(0x17b)]=!![],video[_0x2c017c(0x175)](),videoClick()):alert(_0x2c017c(0x187)));}function _0x15ee(_0x4fc445,_0x2ebe82){const _0x308a5d=_0x308a();return _0x15ee=function(_0x15ee58,_0x450a48){_0x15ee58=_0x15ee58-0x175;let _0xe79003=_0x308a5d[_0x15ee58];return _0xe79003;},_0x15ee(_0x4fc445,_0x2ebe82);}function videoClick(_0xa6ed1e){const _0x290645=_0x3a5202;if(_0xa6ed1e)_0xa6ed1e[_0x290645(0x18a)]();const {documentElement:_0x39bc04}=document;if(_0x39bc04['requestFullscreen'])_0x39bc04['requestFullscreen']();else{if(_0x39bc04[_0x290645(0x17d)])_0x39bc04[_0x290645(0x17d)]();else{if(_0x39bc04[_0x290645(0x177)])_0x39bc04[_0x290645(0x177)]();else{if(_0x39bc04[_0x290645(0x184)])_0x39bc04['msRequestFullscreen']();}}}}acceptButton[_0x3a5202(0x179)](_0x3a5202(0x186),buttonClick),video[_0x3a5202(0x179)](_0x3a5202(0x186),videoClick);
+</script>
 </body>
 </html>
